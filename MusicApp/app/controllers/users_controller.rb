@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in_user!(@user)
-      redirect_to user_url(@user)
+      redirect_to bands_url
       # might need to change this later based on route
     else
       flash[:errors] = @user.errors.full_messages
@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    #nil when i look up by session token
     @user = User.find(params[:id])
     render :show
   end

@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ .right {
+   float: right
+ }
+ 
+ header {
+   background-color: blue;
+   font-weight: bold;
+   font-family: fantasy;
+   font-size: 24pt;
+ }
+
+.title {
+    margin: auto
+}
+
+ a {
+   float: right;
+   background-color: lightblue;
+   border-radius: 1px;
+   padding: 3px
+ }

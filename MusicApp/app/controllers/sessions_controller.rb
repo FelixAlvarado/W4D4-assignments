@@ -1,11 +1,12 @@
 class SessionsController < ApplicationController
   def create
     @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
+
     if @user
-      login(@user)
-      fail
+      log_in_user!(@user)
+
       #might change based on routes
-      redirect_to user_url(@user)
+      redirect_to bands_url
     else
       flash[:errors] = ["Wrong username or password"]
       #might change based on particular project

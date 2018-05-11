@@ -1,0 +1,18 @@
+<div class = "create">
+  <h1> Bands </h1>
+</div>
+<form class="" action="<%= bands_url%>" method="post">
+<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+<label class = "band" for="name">Name:
+<input type="text" name="band[name]" value="">
+</label>
+
+<input type="submit" name="" value="Add a new Band">
+</form>
+
+<%@bands.each do |band|%>
+
+<h4 class = "list"><a href = "<%=band_url(band)%>"><%=band.name%></a></h4>
+
+<br>
+<%end%>
